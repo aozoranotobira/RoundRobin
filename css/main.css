@@ -1,0 +1,119 @@
+/* ダークモード対応 */
+:root {
+  --main-text: #333;
+  --main-background: #fcfcfc;
+  --shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-text: #ccc;
+    --main-background: #333;
+    --shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* 全体 */
+body {
+  font-family: sans-serif;
+  margin: 10px;
+  color: var(--main-text);
+  background-color: var(--main-background);
+}
+table, th, td {
+  border: 1px solid var(--main-text);
+  border-collapse: collapse;
+}
+
+/* 条件入力 */
+.label_input {
+  font-size: 18px;
+  margin: 5px 0 5px 20px;
+}
+.input_number {
+  cursor: pointer;
+  font-size: 18px;
+  text-align-last: right;
+  margin: 3px 0 3px 0;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+.input_number:hover {
+  box-shadow: var(--shadow);
+}
+.input_radio {
+  display: none;
+}
+.input_radio + .label_radio {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 0 3px 10px;
+  padding: 5px 10px;
+  color: var(--main-background);
+  background-color: var(--main-text);
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+.input_radio:hover + .label_radio {
+  box-shadow: var(--shadow);
+}
+.input_radio:checked + .label_radio { 
+  color: #fcfcfc;
+  background-color: #c33;
+}
+.button_calc {
+  cursor: pointer;
+  font-size: 16px;
+  margin: 3px 10px 3px 50px;
+  padding: 5px 10px;
+  color: #c33;
+  background: #fcfcfc;
+  border: solid 2px #c33;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+.button_calc:hover {
+  background: #c33;
+  color: #fcfcfc;
+  box-shadow: var(--shadow);
+}
+
+/* 試合順 */
+#timetable th {
+  width: 100px;
+  height: auto;
+  padding: 2px 2px;
+}
+#timetable td {
+  width: 130px;
+  height: auto;
+  padding: 2px 2px;
+  text-align: center;
+}
+input[type=radio] + label {
+  cursor: pointer;
+}
+input[type=radio]:checked + label { 
+  color: #c33;
+}
+
+/* リーグ表 */
+#leaguetable th {
+  width: 30px;
+  height: 30px;
+  padding: 1px 1px;
+}
+#leaguetable td {
+  width: 30px;
+  height: 30px;
+  padding: 1px 1px;
+  text-align: center;
+}
+#gray {
+  background-color: var(--main-text);
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 600px) {
+  /* スマートフォン */
+}

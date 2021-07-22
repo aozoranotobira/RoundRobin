@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+		<meta name="description" content="試合順序とリーグ表を表示します。32チームまで対応。">
+		<title>総当たり戦</title>
+		<link rel="manifest" href="manifest.json">
+		<link rel="stylesheet" href="./css/main.css">
+		<link rel="shortcut icon" href="favicon.ico">
+		<script src="./js/main.js"></script>
+		<script src="./js/round-robin.js"></script>
+		<script src="./js/combination.js"></script>
+		<script type="text/javascript">
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register("service-worker.js").then(function () {
+				console.log("[Service Worker] Register");
+			});
+		}
+		</script>
+	</head>
+	<body>
+		<label class="label_input" id="teams_label">チーム数　</label><select class="input_number" id="teams_number"></select><br/>
+		<label class="label_input" id="courts_label">コート数　</label><select class="input_number" id="courts_number"></select><br/>
+		<input type="radio" class="input_radio" name="radio-type" id="roundrobin_radio" checked /><label class="label_radio" for="roundrobin_radio">リーグ戦試合順</label>
+		<input type="radio" class="input_radio" name="radio-type" id="combination_radio" /><label class="label_radio" for="combination_radio">ダブルス組み合わせ</label>
+		<button type="button" class="button_calc" id="calc_button">計算</button>
+		<div id="roundrobin"></div>
+	</body>
+</html>
